@@ -1,0 +1,7 @@
+
+keys/.
+keys/.DS_Store
+config.py
+.DS_Store
+*.pyc
+n-of-results/n_of_results.csv

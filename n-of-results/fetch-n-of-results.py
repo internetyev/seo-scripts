@@ -3,7 +3,7 @@ import pandas as pd
 import concurrent.futures
 from urllib.parse import urlencode
 import bs4
-import requests as rq
+import requests
 
 
 
@@ -27,8 +27,13 @@ import requests as rq
 
 # 
 
+#import API keys
 
-API_KEY = '4775cb8179c3e11bacff64983a44d8c5'
+import config
+API_KEY = config.API_KEY
+
+# set variables for ScraperAPI
+
 NUM_RETRIES = 3
 NUM_THREADS = 5
 
@@ -36,12 +41,11 @@ NUM_THREADS = 5
 
 #export domain list from CSV
 
-df_domains = pd.read_csv("competitors-domains.csv")
+df_domains = pd.read_csv("n-of-results/domains.csv")
 
 #convert dataframe to list
-df_domains_values = df_domains["domain_id"].values
+df_domains_values = df_domains["domain"].values
 list_of_domains = df_domains_values.tolist() 
-print(list_of_domains)
 
 # Example: list of urls to scrape
 # list_of_urls = [
@@ -76,7 +80,6 @@ def split_n_of_results (results):
     else:
         results = "0"  # domain is not active or an error
     results = int(results.replace(",",""))
-    print("pages: ", results)
     return results
 
 def scrape_url(url, domain_url):
@@ -118,9 +121,10 @@ def scrape_url(url, domain_url):
         #
         
         html_response = response.text
-        soup = bs4.BeautifulSoup(html_response)
+        soup = bs4.BeautifulSoup(html_response,"lxml")
         scraped_result = str(soup.find("div", { "id" : "result-stats" }))
         number_of_pages = split_n_of_results(scraped_result)
+        print("domain:" + domain_url +"  pages: ", number_of_pages)
         indexed_pages.append ({
             'site': domain_url,
             'indexed_pages': number_of_pages
@@ -159,4 +163,7 @@ with concurrent.futures.ThreadPoolExecutor(max_workers=NUM_THREADS) as executor:
 
 # move to CSV
 df = pd.DataFrame(indexed_pages)
-df.to_csv('competitors_indexed_pages.csv')
+filename = 'n-of-results/n_of_results.csv'
+df.to_csv(filename)
+print("data saved to " + filename)
+
