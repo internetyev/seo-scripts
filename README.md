@@ -1,7 +1,10 @@
 # Internetyev's SEO Python Scripts
 
 Hi!
-My name is Andriy Terentyev, I am SEO consultant focusing on online travel. ex-SEO Lead at Kiwi.com, and ex-COO of Hotelscan.com
+My name is Andriy Terentyev, I am SEO consultant focusing on online travel. 
+I am SEO Strategy Advisor at Kyiv Independent (https://kyivindependent.com). 
+
+Previously I worked as SEO Lead at Kiwi.com, and COO of Hotelscan.com.
 
 Here is my collection of SEO scripts on python that I find useful.
 I have not written majority of them, but modified them significantly. 
