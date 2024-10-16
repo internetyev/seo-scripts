@@ -40,7 +40,6 @@ PS: this is an older version of the script, which I am planning to update by Sep
 The easiest way to set up regular tracking of articles that are ranking on "Top Stories" is by setting up PythonAnywhere.com account with recurring tasks.  
 
 
-
 ## Sources of original scripts:
 
 * https://www.jcchouinard.com/get-number-of-indexed-pages-on-multiple-sites-with-python/
