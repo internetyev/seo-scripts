@@ -7,7 +7,7 @@ I am SEO Strategy Advisor at Kyiv Independent (https://kyivindependent.com).
 Previously I worked as SEO Lead at Kiwi.com, and COO of Hotelscan.com.
 
 Here is my collection of SEO scripts on python that I find useful.
-Some of these scripts are written by me with some help from ChatGPT. The more complex ones I sourced from freelance python developers based on my specs. 
+Some of these scripts are written by me, sometimes with a bit of help from AI. 
 
 ## Fetch number of indexed pages from a list of domains
 
