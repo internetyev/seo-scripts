@@ -1,0 +1,71 @@
+{
+  "parameters": {
+    "chrome_min_version": 119
+  },
+  "ua_rules": [
+    {
+      "groups": ["googlebot-smartphone"],
+      "conditions": {
+        "contains": ["Googlebot", "Mobile"],
+        "chrome_min_version": 119
+      }
+    },
+    {
+      "groups": ["googlebot-desktop"],
+      "conditions": {
+        "contains": ["Googlebot"],
+        "not-contains": ["Mobile"],
+        "chrome_version_range": {
+          "min": 115,
+          "max": 120
+        }
+      }
+    },
+    {
+      "groups": ["googlebot-inspection"],
+      "conditions": {
+        "contains": "Googlebot-Inspection"
+      }
+    },
+    {
+      "groups": ["bingbot"],
+      "conditions": {
+        "regex": "(?i)bingbot|BingPreview"
+      }
+    }
+  ],
+  "default_groups": ["other"],
+  "url_rules": [
+    {
+      "groups": ["homepage"],
+      "conditions": {
+        "equals": "https://www.example.com/"
+      }
+    },
+    {
+      "groups": ["category"],
+      "conditions": [
+        {"contains": "/category/"},
+        {"not-contains": "?"}
+      ]
+    },
+    {
+      "groups": ["product"],
+      "conditions": {
+        "regex": "https://www\\.example\\.com/(product|item)/[a-z0-9-]+"
+      }
+    },
+    {
+      "groups": ["blog"],
+      "conditions": {
+        "contains": "/blog/"
+      }
+    },
+    {
+      "groups": ["Ukrainian"],
+      "conditions": {
+        "contains": "/ua/"
+      }
+    }
+  ]
+}
