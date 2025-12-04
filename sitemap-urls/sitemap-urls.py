@@ -70,10 +70,15 @@ def extract_sitemap_urls(sitemap_url):
     if urls and all(u.endswith('.xml') for u in urls):
         expanded = []
         for u in urls:
-            expanded.extend(extract_sitemap_urls(u))
+            child = urljoin(sitemap_url, u) if not u.startswith('http') else u
+            expanded.extend(extract_sitemap_urls(child))
         return expanded
 
-    return urls
+    collected = []
+    for u in urls:
+        full_url = urljoin(sitemap_url, u) if not u.startswith('http') else u
+        collected.append((full_url, sitemap_url))
+    return collected
 
 
 def main():
@@ -82,6 +87,7 @@ def main():
     group.add_argument('--domain', help='Single domain to process (e.g. example.com)')
     group.add_argument('--domains-csv', help='CSV file containing domains (column `domain` or first column)')
     parser.add_argument('--output', help='Output CSV file path', default='sitemap-urls.csv')
+    parser.add_argument('-v', '--verbose', action='store_true', help='Include domain and sitemap columns in output')
 
     args = parser.parse_args()
 
@@ -94,19 +100,22 @@ def main():
     for d in domains:
         norm = normalize_domain(d)
         sitemaps = extract_sitemaps(norm)
-        urls_collected = []
         for s in sitemaps:
             # make sitemap absolute if relative
             if not s.startswith('http'):
                 s = urljoin(norm + '/', s.lstrip('/'))
             urls = extract_sitemap_urls(s)
-            for u in urls:
-                rows.append({'domain': d, 'url': u})
+            for u, source_sitemap in urls:
+                if args.verbose:
+                    rows.append({'domain': d, 'sitemap': source_sitemap, 'url': u})
+                else:
+                    rows.append({'url': u})
 
     # write CSV
     out_path = args.output
     with open(out_path, 'w', newline='', encoding='utf-8') as csvfile:
-        writer = csv.DictWriter(csvfile, fieldnames=['domain', 'url'])
+        fieldnames = ['domain', 'sitemap', 'url'] if args.verbose else ['url']
+        writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
         writer.writeheader()
         for row in rows:
             writer.writerow(row)
@@ -116,6 +125,4 @@ def main():
 
 if __name__ == '__main__':
     main()
-
-
 
