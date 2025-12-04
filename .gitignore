@@ -5,3 +5,9 @@ config.py
 .DS_Store
 *.pyc
 n-of-results/n_of_results.csv
+paa-fetch/.dataforseo.json
+paa-fetch/queries-sample.txt
+paa-fetch/queries-sample_questions.csv
+paa-fetch/queries-sample_questions.json
+sitemap-urls/cleancruising-com-au.csv
+sitemap-urls/sitemap-urls.py
