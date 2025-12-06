@@ -11,3 +11,4 @@ paa-fetch/queries-sample_questions.csv
 paa-fetch/queries-sample_questions.json
 sitemap-urls/cleancruising-com-au.csv
 sitemap-urls/sitemap-urls.py
+sitemap-urls/*.csv

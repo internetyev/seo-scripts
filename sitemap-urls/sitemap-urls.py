@@ -4,6 +4,7 @@ import requests
 import pandas as pd
 from bs4 import BeautifulSoup
 from urllib.parse import urljoin
+from tqdm import tqdm
 
 
 def normalize_domain(d):
@@ -51,7 +52,7 @@ def extract_sitemaps(domain_url):
     return sitemap_urls
 
 
-def extract_sitemap_urls(sitemap_url):
+def extract_sitemap_urls(sitemap_url, pbar=None):
     try:
         r = requests.get(sitemap_url, timeout=15)
         r.raise_for_status()
@@ -71,13 +72,21 @@ def extract_sitemap_urls(sitemap_url):
         expanded = []
         for u in urls:
             child = urljoin(sitemap_url, u) if not u.startswith('http') else u
-            expanded.extend(extract_sitemap_urls(child))
+            # Process nested sitemaps without progress bar, then update main bar
+            child_urls = extract_sitemap_urls(child, pbar=None)
+            if pbar:
+                # Update progress bar with count of URLs found in nested sitemap
+                pbar.update(len(child_urls))
+            expanded.extend(child_urls)
         return expanded
 
+    # Update progress bar for final URLs
     collected = []
     for u in urls:
         full_url = urljoin(sitemap_url, u) if not u.startswith('http') else u
         collected.append((full_url, sitemap_url))
+        if pbar:
+            pbar.update(1)
     return collected
 
 
@@ -98,18 +107,28 @@ def main():
 
     rows = []
     for d in domains:
+        print(f"\nFetching sitemap URLs for: {d}")
         norm = normalize_domain(d)
         sitemaps = extract_sitemaps(norm)
-        for s in sitemaps:
-            # make sitemap absolute if relative
-            if not s.startswith('http'):
-                s = urljoin(norm + '/', s.lstrip('/'))
-            urls = extract_sitemap_urls(s)
-            for u, source_sitemap in urls:
-                if args.verbose:
-                    rows.append({'domain': d, 'sitemap': source_sitemap, 'url': u})
-                else:
-                    rows.append({'url': u})
+        print(f"Found {len(sitemaps)} sitemap(s)")
+        
+        # Process each sitemap with progress bar
+        with tqdm(total=len(sitemaps), desc="Processing sitemaps", unit="sitemap") as sitemap_pbar:
+            for s in sitemaps:
+                # make sitemap absolute if relative
+                if not s.startswith('http'):
+                    s = urljoin(norm + '/', s.lstrip('/'))
+                
+                # Extract URLs with progress bar
+                with tqdm(desc=f"Extracting URLs from {s.split('/')[-1]}", unit="URL", leave=False) as url_pbar:
+                    urls = extract_sitemap_urls(s, pbar=url_pbar)
+                    for u, source_sitemap in urls:
+                        if args.verbose:
+                            rows.append({'domain': d, 'sitemap': source_sitemap, 'url': u})
+                        else:
+                            rows.append({'url': u})
+                
+                sitemap_pbar.update(1)
 
     # write CSV
     out_path = args.output
