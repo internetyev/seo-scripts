@@ -3,7 +3,7 @@ import csv
 import json
 import sys
 from dataclasses import dataclass
-from typing import List, Set, Tuple
+from typing import List, Optional, Set, Tuple
 
 import requests
 from bs4 import BeautifulSoup
@@ -12,11 +12,12 @@ from bs4 import BeautifulSoup
 @dataclass
 class UrlSchemas:
     url: str
+    status_code: int
     schemas: Set[str]
 
 
-def fetch_html(url: str, timeout: int = 15) -> str:
-    """Fetch a URL and return its HTML content."""
+def fetch_html(url: str, timeout: int = 15) -> Tuple[str, int]:
+    """Fetch a URL and return its HTML content and HTTP status code."""
     headers = {
         "User-Agent": (
             "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
@@ -26,7 +27,7 @@ def fetch_html(url: str, timeout: int = 15) -> str:
     }
     resp = requests.get(url, headers=headers, timeout=timeout)
     resp.raise_for_status()
-    return resp.text
+    return resp.text, resp.status_code
 
 
 def _collect_types_from_jsonld_obj(obj, types: Set[str]) -> None:
@@ -97,13 +98,14 @@ def extract_schema_types(html: str) -> Set[str]:
 def analyze_url(url: str) -> UrlSchemas:
     """Fetch a URL and return detected schema.org types."""
     try:
-        html = fetch_html(url)
+        html, status_code = fetch_html(url)
     except Exception as exc:  # noqa: BLE001
         print(f"Error fetching {url}: {exc}", file=sys.stderr)
-        return UrlSchemas(url=url, schemas=set())
+        # Use status_code 0 to indicate that the page was not readable / no response.
+        return UrlSchemas(url=url, status_code=0, schemas=set())
 
     schemas = extract_schema_types(html)
-    return UrlSchemas(url=url, schemas=schemas)
+    return UrlSchemas(url=url, status_code=status_code, schemas=schemas)
 
 
 def load_urls_from_file(path: str) -> List[str]:
@@ -148,13 +150,13 @@ def write_results_to_csv(results: List[UrlSchemas], output_path: str) -> None:
         all_types.update(res.schemas)
 
     sorted_types = sorted(all_types)
-    header: List[str] = ["URL"] + sorted_types
+    header: List[str] = ["URL", "status_code"] + sorted_types
 
     with open(output_path, "w", encoding="utf-8", newline="") as f:
         writer = csv.writer(f)
         writer.writerow(header)
         for res in results:
-            row = [res.url]
+            row = [res.url, str(res.status_code)]
             present = res.schemas
             for t in sorted_types:
                 row.append("1" if t in present else "0")
@@ -170,11 +172,11 @@ def results_to_table(results: List[UrlSchemas]) -> Tuple[List[str], List[List[st
         all_types.update(res.schemas)
 
     sorted_types = sorted(all_types)
-    header: List[str] = ["URL"] + sorted_types
+    header: List[str] = ["URL", "status_code"] + sorted_types
 
     rows: List[List[str]] = []
     for res in results:
-        row = [res.url]
+        row = [res.url, str(res.status_code)]
         for t in sorted_types:
             row.append("1" if t in res.schemas else "0")
         rows.append(row)
@@ -189,7 +191,7 @@ def print_table_as_csv_like(header: List[str], rows: List[List[str]]) -> None:
         print(",".join(row))
 
 
-def parse_args(argv: List[str] | None = None) -> argparse.Namespace:
+def parse_args(argv: Optional[List[str]] = None) -> argparse.Namespace:
     parser = argparse.ArgumentParser(
         description=(
             "Check which schema.org markup types are present on one or more URLs "
@@ -218,7 +220,7 @@ def parse_args(argv: List[str] | None = None) -> argparse.Namespace:
     return parser.parse_args(argv)
 
 
-def main(argv: List[str] | None = None) -> None:
+def main(argv: Optional[List[str]] = None) -> None:
     args = parse_args(argv)
 
     if args.file:
