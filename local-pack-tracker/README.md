@@ -46,7 +46,7 @@ python local-pack-tracker.py <csv_file> [options]
 
 - `-o, --output`: Output CSV file path (default: `local-pack-positions.csv`)
 - `--json-dir`: Directory to save raw JSON files (default: `serp-json`)
-- `--depth`: Depth of search results (default: 100)
+- `--depth`: Depth of search results (default: 10)
 
 ### Examples
 

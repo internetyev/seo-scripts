@@ -1,0 +1,198 @@
+{
+  "version": "0.1.20251208",
+  "status_code": 20000,
+  "status_message": "Ok.",
+  "time": "3.1750 sec.",
+  "cost": 0.002,
+  "tasks_count": 1,
+  "tasks_error": 0,
+  "tasks": [
+    {
+      "id": "12192009-7610-0121-0000-91e2192a03c8",
+      "status_code": 20000,
+      "status_message": "Ok.",
+      "time": "2.9505 sec.",
+      "cost": 0.002,
+      "result_count": 1,
+      "path": [
+        "v3",
+        "serp",
+        "google",
+        "organic",
+        "live",
+        "regular"
+      ],
+      "data": {
+        "api": "serp",
+        "function": "live",
+        "se": "google",
+        "se_type": "organic",
+        "keyword": "Port St. Lucie bicycle accident lawyer",
+        "language_code": "en",
+        "location_code": 1015182,
+        "device": "desktop",
+        "depth": 10,
+        "os": "windows"
+      },
+      "result": [
+        {
+          "keyword": "Port St. Lucie bicycle accident lawyer",
+          "type": "organic",
+          "se_domain": "google.com",
+          "location_code": 1015182,
+          "language_code": "en",
+          "check_url": "https://www.google.com/search?q=Port%20St.%20Lucie%20bicycle%20accident%20lawyer&hl=en&gl=US&ie=UTF-8&uule=w+CAIQIFISCa0Oxfbv6t6IEeAQft75VEr0",
+          "datetime": "2025-12-19 18:09:27 +00:00",
+          "spell": null,
+          "refinement_chips": {
+            "type": "refinement_chips",
+            "xpath": "/html[1]/body[1]/div[3]/div[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]",
+            "items": [
+              {
+                "type": "refinement_chips_element",
+                "title": "Online appointments",
+                "url": "https://www.google.com/search?sca_esv=9fc1c8ab75c29480&hl=en&gl=US&q=online+appointments+Port+St.+Lucie+bicycle+accident+lawyer&uds=AOm0WdE2fekQnsyfYEw8JPYozOKz2bHp10B8UCppyPyl-oX5Ew-cHEQwa39sFXsNpNLGtU1cZfh_tPryptJyLgCSqZc6xHGa6MHMCJD5RDdooSWHEPyQfmf3Sup31brnYMq1RmIBFCGk_RC1Bem85haO7W9zjhV8C-oZzokCRX021Nv_dHc8-cqyNebTcFzaoCwRYrGnnRyGUoYsT_SBAzmlYq4g-i711UqQmNACEO0IwVlfjRpTIrWFb2hOfcYXj3HwyhsZxZegpXyvAD7E5z9r26Luun1ZSuK9DpfW3Bzv69Qt_9fiLD4&sa=X&ved=2ahUKEwiRrMnSn8qRAxXzYPUHHRsZHGkQxKsJKAB6BAgMEAE&ictx=0",
+                "domain": "www.google.com",
+                "options": null
+              },
+              {
+                "type": "refinement_chips_element",
+                "title": "Open now",
+                "url": "https://www.google.com/search?sca_esv=9fc1c8ab75c29480&hl=en&gl=US&q=Port+St.+Lucie+bicycle+accident+lawyer+open+now&uds=AOm0WdE2fekQnsyfYEw8JPYozOKzzY3RgGaa7BM8YkILoa3paJMYTURn4SLEvWl7zKeJuEeDREZ3gv9ddnW1NPugBqXWXDOcQ1vf71eY_pv8QXOwbXusHjv4Blgg5wIsxV_t2g42fY8TKORyAbOT6zAY7rrqfavB2-cwwt1qkOgAqwfLkwTfYdNJasGQ6x1jWaM4OICFNjwiRmWe-xJXGYiPdTxBGS6_F5q-M2yWtb8BL2YJDdM4Xoo&sa=X&ved=2ahUKEwiRrMnSn8qRAxXzYPUHHRsZHGkQxKsJKAF6BAgNEAE&ictx=0",
+                "domain": "www.google.com",
+                "options": null
+              },
+              {
+                "type": "refinement_chips_element",
+                "title": "Top rated",
+                "url": "https://www.google.com/search?sca_esv=9fc1c8ab75c29480&hl=en&gl=US&q=top+rated+Port+St.+Lucie+bicycle+accident+lawyer&uds=AOm0WdE2fekQnsyfYEw8JPYozOKzN--3IfUGD3mcOPoijQdOZkcPcra3CzGJofpfSbDv2A3Lz_rVMCRtPD-M9drhxlEqDbo8p6TNJJQttLz-oUZlFzMGgYbUOmUDtcI5_0q7Iriu9M_fqCzIdUOAJb0Xf-tqiaovMXK1xhZvOaK2lDwHpn1xxOiKrfRqJpOmddrbHlYIR0sGOKqUKpKRhrkNI18bbGikfKNgWdgMDxDBzKLKI6mMJUQ&sa=X&ved=2ahUKEwiRrMnSn8qRAxXzYPUHHRsZHGkQxKsJKAJ6BAgQEAE&ictx=0",
+                "domain": "www.google.com",
+                "options": null
+              }
+            ]
+          },
+          "item_types": [
+            "organic",
+            "local_pack",
+            "people_also_ask"
+          ],
+          "se_results_count": 257000,
+          "pages_count": 1,
+          "items_count": 10,
+          "items": [
+            {
+              "type": "organic",
+              "rank_group": 1,
+              "rank_absolute": 1,
+              "page": 1,
+              "domain": "www.smithball.com",
+              "title": "Port St. Lucie Bicycle Accident Lawyer",
+              "description": "Please call Smith, Ball & Báez today to speak with a Port St. Lucie bicycle accident lawyer. Lawyer 561-500-HELP 772-500-HELP . Lucie 772-500-4357 1641",
+              "url": "https://www.smithball.com/port-st-lucie-bicycle-accident-lawyer/",
+              "breadcrumb": "https://www.smithball.com › port-st-lucie-bicycle-accid..."
+            },
+            {
+              "type": "organic",
+              "rank_group": 2,
+              "rank_absolute": 5,
+              "page": 1,
+              "domain": "myfavoritelawfirm.com",
+              "title": "Port St. Lucie Bicycle Accident Lawyers",
+              "description": "David Golden Law Offices ・ more than 37 years of experience advocating ・ 772-220-4400. To schedule a free initial consultation, call us today at 772-336-4357.",
+              "url": "https://myfavoritelawfirm.com/port-st-lucie/port-st-lucie-bicycle-accident-lawyers/",
+              "breadcrumb": "https://myfavoritelawfirm.com › port-st-lucie › port-st-l..."
+            },
+            {
+              "type": "organic",
+              "rank_group": 3,
+              "rank_absolute": 7,
+              "page": 1,
+              "domain": "kibbeylaw.com",
+              "title": "Port St. Lucie Personal Injury Lawyer - Bicycle Accidents",
+              "description": "Call us now at (772) 247-3374 to speak with the experienced Port St. Lucie bicycle accident lawyers at Kibbey Wagner Injury & Car 've won over $500 million in ...",
+              "url": "https://kibbeylaw.com/port-st-lucie-bicycle-accident-lawyer/",
+              "breadcrumb": "https://kibbeylaw.com › port-st-lucie-bicycle-accident-l..."
+            },
+            {
+              "type": "organic",
+              "rank_group": 4,
+              "rank_absolute": 8,
+              "page": 1,
+              "domain": "lawteam.com",
+              "title": "Port St Lucie Bicycle Accident Lawyer - Fetterman Law",
+              "description": "Call our bicycle accident law firm for a FREE CONSULTATION with a Port St Lucie bike accident attorney 561-295-9258.",
+              "url": "https://lawteam.com/port-st-lucie/bicycle-accident-lawyer/",
+              "breadcrumb": "https://lawteam.com › Port St. Lucie"
+            },
+            {
+              "type": "organic",
+              "rank_group": 5,
+              "rank_absolute": 9,
+              "page": 1,
+              "domain": "www.kogan-disalvo.com",
+              "title": "Port St. Lucie Bicycle Accident Lawyer",
+              "description": "Contact Port St. Lucie bicycle accident lawyers today. Call Us Now for a Free Consultation 561-375-9500",
+              "url": "https://www.kogan-disalvo.com/port-st-lucie-injury/bicycle-accident-lawyer/",
+              "breadcrumb": "https://www.kogan-disalvo.com › port-st-lucie-injury"
+            },
+            {
+              "type": "organic",
+              "rank_group": 6,
+              "rank_absolute": 10,
+              "page": 1,
+              "domain": "shinerlawgroup.com",
+              "title": "Port St Lucie Bicycle Accident Lawyer",
+              "description": "Speak with our Port St Lucie bicycle accident lawyer today at (772) 777-7700 to learn more about your right to compensation. Shiner Law Group Can Help After ... Read more",
+              "url": "https://shinerlawgroup.com/port-st-lucie-bicycle-accident-lawyer/",
+              "breadcrumb": "https://shinerlawgroup.com › port-st-lucie-bicycle-accid..."
+            },
+            {
+              "type": "organic",
+              "rank_group": 7,
+              "rank_absolute": 11,
+              "page": 1,
+              "domain": "www.gedlawyers.com",
+              "title": "Bicycle Accident Lawyer in Port St. Lucie | Free Consult",
+              "description": "You can build a legal claim for maximum compensation after a crash by hiring a Port St. Lucie bicycle accident lawyer from our team at GED Lawyers. Read more",
+              "url": "https://www.gedlawyers.com/practice-areas/personal-injury/bicycle-accidents/florida/port-st-lucie/",
+              "breadcrumb": "https://www.gedlawyers.com › bicycle-accidents › florida"
+            },
+            {
+              "type": "organic",
+              "rank_group": 8,
+              "rank_absolute": 12,
+              "page": 1,
+              "domain": "www.fklegal.com",
+              "title": "Port St Lucie Bicycle Accident Lawyer",
+              "description": "Need a trusted bicycle accident lawyer in Port St. Lucie? Our experienced attorneys provide personalized legal support. Contact us for a consultation today.",
+              "url": "https://www.fklegal.com/port-st-lucie/bicycle-accidents/",
+              "breadcrumb": "https://www.fklegal.com › Port St. Lucie Law Firm"
+            },
+            {
+              "type": "organic",
+              "rank_group": 9,
+              "rank_absolute": 13,
+              "page": 1,
+              "domain": "www.rosenthallevy.com",
+              "title": "Port St. Lucie Bicycle Accident Lawyers",
+              "description": "If you suffer an injury in a bicycle accident, you need a Port St. Lucie bicycle accident attorney from Rosenthal, Levy, Simon & Sosa on your side in the fight ... Read more",
+              "url": "https://www.rosenthallevy.com/port-st-lucie/bicycle-accident-lawyers/",
+              "breadcrumb": "https://www.rosenthallevy.com › port-st-lucie › bicycle-..."
+            },
+            {
+              "type": "organic",
+              "rank_group": 10,
+              "rank_absolute": 14,
+              "page": 1,
+              "domain": "stluciepersonalinjuryattorney.com",
+              "title": "Bicycle Accident",
+              "description": "The Law Office of Todd C. Passman, handles bicycle accident cases in Fort Pierce, Port St. Lucie, Vero Beach, Stuart, and Okeechobee, Florida, and surrounding ... Read more",
+              "url": "https://stluciepersonalinjuryattorney.com/practice/bicycle-accident/",
+              "breadcrumb": "https://stluciepersonalinjuryattorney.com › Practice"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

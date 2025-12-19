@@ -1,0 +1,197 @@
+{
+  "version": "0.1.20251208",
+  "status_code": 20000,
+  "status_message": "Ok.",
+  "time": "3.1562 sec.",
+  "cost": 0.002,
+  "tasks_count": 1,
+  "tasks_error": 0,
+  "tasks": [
+    {
+      "id": "12192009-7610-0121-0000-de2b63e1407f",
+      "status_code": 20000,
+      "status_message": "Ok.",
+      "time": "2.8385 sec.",
+      "cost": 0.002,
+      "result_count": 1,
+      "path": [
+        "v3",
+        "serp",
+        "google",
+        "organic",
+        "live",
+        "regular"
+      ],
+      "data": {
+        "api": "serp",
+        "function": "live",
+        "se": "google",
+        "se_type": "organic",
+        "keyword": "San Jose bicycle accident lawyer",
+        "language_code": "en",
+        "location_code": 1014226,
+        "device": "desktop",
+        "depth": 10,
+        "os": "windows"
+      },
+      "result": [
+        {
+          "keyword": "San Jose bicycle accident lawyer",
+          "type": "organic",
+          "se_domain": "google.com",
+          "location_code": 1014226,
+          "language_code": "en",
+          "check_url": "https://www.google.com/search?q=San%20Jose%20bicycle%20accident%20lawyer&hl=en&gl=US&ie=UTF-8&uule=w+CAIQIFISCfU_-Yrkyo-AEXtxn8oKjJ25",
+          "datetime": "2025-12-19 18:09:05 +00:00",
+          "spell": null,
+          "refinement_chips": {
+            "type": "refinement_chips",
+            "xpath": "/html[1]/body[1]/div[3]/div[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]",
+            "items": [
+              {
+                "type": "refinement_chips_element",
+                "title": "Online appointments",
+                "url": "https://www.google.com/search?sca_esv=9fc1c8ab75c29480&hl=en&gl=US&q=online+appointments+San+Jose+bicycle+accident+lawyer&uds=AOm0WdE2fekQnsyfYEw8JPYozOKzfwq8RaxAZkz4ZkM4Ue1Zr4fIUaygE-09chdGvticrNNX_jiqtRFhnCFTPUAaEdkCj0M2IpOPLFA07od6wjAd21fLB2zw6sR1aZqnA45pZ8AWNAabDXtGkRe6yKakI4HB2kHSQ1wF60RmvC4oXriSwr5fRbeQ7GxxPmObjN0s29E9lyJJKMu7s7Jh2qndZV29AOdtXz_eINuRJAe9V6MqKnv_L-CtwuN8gTPB2Hc0_OAnwtrXIi6tHyD9dOVz8roTdHQlZw&sa=X&ved=2ahUKEwiSwIDIn8qRAxWth_0HHQW3HeoQxKsJKAB6BAgPEAE&ictx=0",
+                "domain": "www.google.com",
+                "options": null
+              },
+              {
+                "type": "refinement_chips_element",
+                "title": "Open now",
+                "url": "https://www.google.com/search?sca_esv=9fc1c8ab75c29480&hl=en&gl=US&q=San+Jose+bicycle+accident+lawyer+open+now&uds=AOm0WdE2fekQnsyfYEw8JPYozOKzooy2wj3v4xStWwShT-RMCoVG6gVVBPkir5Iata1EneW52EaGE5bONIlZS3Z66A_vbFUeGqJIZ01WnOXYrD7cmeF9BpVFNjM65bo4pSkr24N9G99jXBoPqDqoLaOiNti9KYjaewi5yRCMNrj5uIfPE4bnsCENBwKPPFF40VrYq1oDyuXIKfvllrQGxJiA0nuhmqV47A&sa=X&ved=2ahUKEwiSwIDIn8qRAxWth_0HHQW3HeoQxKsJKAF6BAgREAE&ictx=0",
+                "domain": "www.google.com",
+                "options": null
+              },
+              {
+                "type": "refinement_chips_element",
+                "title": "Top rated",
+                "url": "https://www.google.com/search?sca_esv=9fc1c8ab75c29480&hl=en&gl=US&q=top+rated+San+Jose+bicycle+accident+lawyer&uds=AOm0WdE2fekQnsyfYEw8JPYozOKzjdIOKHWVoAuYlxRRlTKxoJnbrVojZB20lpsRYKMRIh_j8yCHBVt2MAEMeqpv0war_XIk1M60w7qZfXyDRAsmnMmWmJqum4jcDvoR4BjwfjVJX_Oswxso36Lx1pvYgwuj2zsCkXeEZfoHnRvZLFfCalrU4iTv1VMh1mNr5WDQ2aupoF285CJX6zSrKv-_P4dpr3tXJSfzKa2ATERZQCxNOylsXVk&sa=X&ved=2ahUKEwiSwIDIn8qRAxWth_0HHQW3HeoQxKsJKAJ6BAgQEAE&ictx=0",
+                "domain": "www.google.com",
+                "options": null
+              }
+            ]
+          },
+          "item_types": [
+            "organic",
+            "local_pack"
+          ],
+          "se_results_count": 551000,
+          "pages_count": 1,
+          "items_count": 10,
+          "items": [
+            {
+              "type": "organic",
+              "rank_group": 1,
+              "rank_absolute": 1,
+              "page": 1,
+              "domain": "www.nkf-law.com",
+              "title": "Bicycle Accident Lawyer in San Jose",
+              "description": "Work with our bicycle accident lawyer in San Jose for comprehensive guidance. Call (408) 716-1668 for a free consultation.",
+              "url": "https://www.nkf-law.com/san-jose-bicycle-accident-lawyer/",
+              "breadcrumb": "https://www.nkf-law.com › san-jose-bicycle-accident-la..."
+            },
+            {
+              "type": "organic",
+              "rank_group": 2,
+              "rank_absolute": 5,
+              "page": 1,
+              "domain": "www.theswansonlawgroup.com",
+              "title": "Bicycle Accident Lawyer in San Jose | Swanson Law Group",
+              "description": "We offer a free case consultation for bicycle and car accidents. We want to hear your story and offer legal representation in Spanish and English. All cases are ... Read more",
+              "url": "https://www.theswansonlawgroup.com/car-accident-lawyer/bicycle-accidents/",
+              "breadcrumb": "https://www.theswansonlawgroup.com › bicycle-accidents"
+            },
+            {
+              "type": "organic",
+              "rank_group": 3,
+              "rank_absolute": 6,
+              "page": 1,
+              "domain": "bayareabicyclelaw.com",
+              "title": "San Jose Bicycle Accident Lawyer",
+              "description": "A consultation is free, and payment for our services is factored into your settlement. Call us at 415-466-8717 or reach out to us at bayareabicyclelaw.com to ... Read more",
+              "url": "https://bayareabicyclelaw.com/san-jose-bicycle-accident-lawyer/",
+              "breadcrumb": "https://bayareabicyclelaw.com › san-jose-bicycle-acciden..."
+            },
+            {
+              "type": "organic",
+              "rank_group": 4,
+              "rank_absolute": 7,
+              "page": 1,
+              "domain": "bencrump.com",
+              "title": "San Jose Bicycle Accident Lawyers",
+              "description": "If you or a loved one suffered injuries in a bicycle accident, consult a San Jose bicycle accident lawyer about your case. Call Ben Crump Law, PLLC at (800) 683 ... Read more",
+              "url": "https://bencrump.com/areas-we-serve/san-jose-ca/bicycle-accident-lawyer/",
+              "breadcrumb": "https://bencrump.com › areas-we-serve › bicycle-accide..."
+            },
+            {
+              "type": "organic",
+              "rank_group": 5,
+              "rank_absolute": 8,
+              "page": 1,
+              "domain": "www.habbaslaw.com",
+              "title": "San Jose Bicycle Accident Lawyers",
+              "description": "If you have suffered injuries in a serious bike accident, talk to a bicycle accident attorney in San Jose at Habbas & Associates to learn if you have the right ... Read more",
+              "url": "https://www.habbaslaw.com/personal-injury/bicycle-accidents/",
+              "breadcrumb": "https://www.habbaslaw.com › personal-injury › bicycle..."
+            },
+            {
+              "type": "organic",
+              "rank_group": 6,
+              "rank_absolute": 9,
+              "page": 1,
+              "domain": "www.bikelegalfirm.com",
+              "title": "Top-Rated San Jose Bicycle Accident Lawyer",
+              "description": "Injured in a San Jose bicycle crash? Trust Bike Legal's attorneys, cyclists representing cyclists, to win maximum compensation. (877) 245-3534 FREE consult.",
+              "url": "https://www.bikelegalfirm.com/san-jose",
+              "breadcrumb": "https://www.bikelegalfirm.com › san-jose"
+            },
+            {
+              "type": "organic",
+              "rank_group": 7,
+              "rank_absolute": 10,
+              "page": 1,
+              "domain": "www.jachlawgroup.com",
+              "title": "San Jose Bicycle Accident Lawyers | Bike Injury",
+              "description": "Jul 19, 2024 — Call 408-550-1732 for an immediate consultation with a highly skilled San Jose bicycle accident lawyer. Wherever you are in Northern California, ... Read more",
+              "url": "https://www.jachlawgroup.com/personal-injury/bicycle-accidents/",
+              "breadcrumb": "https://www.jachlawgroup.com › personal-injury › bicy..."
+            },
+            {
+              "type": "organic",
+              "rank_group": 8,
+              "rank_absolute": 11,
+              "page": 1,
+              "domain": "www.ccwlawyers.com",
+              "title": "San Jose Bicycle Accident Attorney",
+              "description": "If you were injured while riding a bike in San Jose, do not wait to seek help. Trust Choulos, Choulos & Wyle to recover your compensation.",
+              "url": "https://www.ccwlawyers.com/san-jose-bicycle-accident-lawyer/",
+              "breadcrumb": "https://www.ccwlawyers.com › san-jose-bicycle-accident-..."
+            },
+            {
+              "type": "organic",
+              "rank_group": 9,
+              "rank_absolute": 12,
+              "page": 1,
+              "domain": "www.jacobyandmeyers.com",
+              "title": "San Jose Bicycle Accident Attorney | Free Consultation",
+              "description": "Our San Jose bicycle accident attorneys have earned the trust of tens of thousands of clients since 1972. Contact us for a Free consultation.",
+              "url": "https://www.jacobyandmeyers.com/san-jose-bicycle-accident-lawyer/",
+              "breadcrumb": "https://www.jacobyandmeyers.com › san-jose-bicycle-a..."
+            },
+            {
+              "type": "organic",
+              "rank_group": 10,
+              "rank_absolute": 13,
+              "page": 1,
+              "domain": "www.walkuplawoffice.com",
+              "title": "San Jose Bicycle Accident Attorney",
+              "description": "We recently won a $15 million settlement for an injured bicyclist hit by a truck. Call our San Jose Bicycle Accident Attorney today!",
+              "url": "https://www.walkuplawoffice.com/san-jose-bicycle-accident-lawyer/",
+              "breadcrumb": "https://www.walkuplawoffice.com › san-jose-bicycle-acci..."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

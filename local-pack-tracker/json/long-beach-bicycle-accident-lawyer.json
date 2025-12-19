@@ -1,0 +1,198 @@
+{
+  "version": "0.1.20251208",
+  "status_code": 20000,
+  "status_message": "Ok.",
+  "time": "3.0315 sec.",
+  "cost": 0.002,
+  "tasks_count": 1,
+  "tasks_error": 0,
+  "tasks": [
+    {
+      "id": "12192009-7610-0121-0000-e7f74f5474d3",
+      "status_code": 20000,
+      "status_message": "Ok.",
+      "time": "2.6237 sec.",
+      "cost": 0.002,
+      "result_count": 1,
+      "path": [
+        "v3",
+        "serp",
+        "google",
+        "organic",
+        "live",
+        "regular"
+      ],
+      "data": {
+        "api": "serp",
+        "function": "live",
+        "se": "google",
+        "se_type": "organic",
+        "keyword": "Long Beach bicycle accident lawyer",
+        "language_code": "en",
+        "location_code": 1014004,
+        "device": "desktop",
+        "depth": 10,
+        "os": "windows"
+      },
+      "result": [
+        {
+          "keyword": "Long Beach bicycle accident lawyer",
+          "type": "organic",
+          "se_domain": "google.com",
+          "location_code": 1014004,
+          "language_code": "en",
+          "check_url": "https://www.google.com/search?q=Long%20Beach%20bicycle%20accident%20lawyer&hl=en&gl=US&ie=UTF-8&uule=w+CAIQIFISCZm2G_2EP5GAERiChrwgqi_t",
+          "datetime": "2025-12-19 18:09:22 +00:00",
+          "spell": null,
+          "refinement_chips": {
+            "type": "refinement_chips",
+            "xpath": "/html[1]/body[1]/div[3]/div[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]",
+            "items": [
+              {
+                "type": "refinement_chips_element",
+                "title": "Online appointments",
+                "url": "https://www.google.com/search?sca_esv=9fc1c8ab75c29480&hl=en&gl=US&q=online+appointments+Long+Beach+bicycle+accident+lawyer&uds=AOm0WdE2fekQnsyfYEw8JPYozOKzkxMtKvnKNZX36b_KUhJoV0s-7RmDiC_nkTnB9ycoZsAZmog2gKZrM2Nn1cE-tKJ1Z2B8zJ77ZfMAZI_uLb_L4eLyTIXMmAsVVWE7Btdux_B23dZexGUUdNrJPM6-uuyOaho5dGtQf0M9HOJyz1RYAEOViPBVamJNP31Dk_ulDP6LoWwQKv5FwWLF5S9U31plpWeQFUnLqKnSFJViqafwIPUe6zJTYx1FDSoyU0LPN-n-ceIPnt00St6RxBBucbRJ3_PqIfYIxehCfQoIQ4hyJ4KQXgw&sa=X&ved=2ahUKEwjPrKvQn8qRAxVHhv0HHQWFGnwQxKsJKAB6BAgQEAE&ictx=0",
+                "domain": "www.google.com",
+                "options": null
+              },
+              {
+                "type": "refinement_chips_element",
+                "title": "Open now",
+                "url": "https://www.google.com/search?sca_esv=9fc1c8ab75c29480&hl=en&gl=US&q=Long+Beach+bicycle+accident+lawyer+open+now&uds=AOm0WdE2fekQnsyfYEw8JPYozOKzfCngwChX9O92lx5pStrMQMrRevHLAA9d9HaxSmrPH_CCKZFp809CUY3nU10QRDbrC1fBZHwzk183vlTNHPG9Zz2cl8ljAO9QJPFjgVUGuklaJ9-Tt1sN7jzvOKyZ1L1A2TQhbvx65qQkG0P8_pEXL4eFrCEC8qfQyjZj4uL5-ffFDKeUsDo19Wi96XQKxphV3RGw7x5bJvy2rfTH8-45JbanSOw&sa=X&ved=2ahUKEwjPrKvQn8qRAxVHhv0HHQWFGnwQxKsJKAF6BAgSEAE&ictx=0",
+                "domain": "www.google.com",
+                "options": null
+              },
+              {
+                "type": "refinement_chips_element",
+                "title": "Top rated",
+                "url": "https://www.google.com/search?sca_esv=9fc1c8ab75c29480&hl=en&gl=US&q=top+rated+Long+Beach+bicycle+accident+lawyer&uds=AOm0WdE2fekQnsyfYEw8JPYozOKzYuHtdbqs4ViyzFezsFYac613F9RszEMWqhGhrH6173emtj4S2CE58J2d-8cgUntRHvqVV9VHXzCVopcG1WQzZwEgTH8Xygfln_wPS2sovtwYXULMvSNb03BXoqW4aOgiHUt7xrMEGuAag7D2G2M_huYfjyPX2TKI9w81ScGo2vn5zCUbeN3AYpzqZGklpFSJpIOj6yxkuzAcwR1iOgsVUNeqzSQ&sa=X&ved=2ahUKEwjPrKvQn8qRAxVHhv0HHQWFGnwQxKsJKAJ6BAgUEAE&ictx=0",
+                "domain": "www.google.com",
+                "options": null
+              }
+            ]
+          },
+          "item_types": [
+            "organic",
+            "local_pack",
+            "related_searches"
+          ],
+          "se_results_count": 7090000,
+          "pages_count": 1,
+          "items_count": 10,
+          "items": [
+            {
+              "type": "organic",
+              "rank_group": 1,
+              "rank_absolute": 1,
+              "page": 1,
+              "domain": "dominguezfirm.com",
+              "title": "Long Beach Bicycle Accident Lawyer | Over $1 Billion Won",
+              "description": "Hire a lawyer from an experienced personal injury law firm such as The Dominguez Firm to represent you after your Long Beach bicycle accident. Many bicyclists ... Read more",
+              "url": "https://dominguezfirm.com/locations/long-beach/bicycle-accident-lawyer/",
+              "breadcrumb": "https://dominguezfirm.com › locations › bicycle-accide..."
+            },
+            {
+              "type": "organic",
+              "rank_group": 2,
+              "rank_absolute": 2,
+              "page": 1,
+              "domain": "www.hsrlegal.com",
+              "title": "Long Beach Bicycle Accident Attorney | CA",
+              "description": "Maximize the value of your bike accident claim with the help of a Long Beach bicycle accident lawyer at Harting Simkins & Ryan, LLP. (562) 981-1010.",
+              "url": "https://www.hsrlegal.com/long-beach-bicycle-accident-lawyer/",
+              "breadcrumb": "https://www.hsrlegal.com › long-beach-bicycle-accident-..."
+            },
+            {
+              "type": "organic",
+              "rank_group": 3,
+              "rank_absolute": 3,
+              "page": 1,
+              "domain": "www.erlawyers.com",
+              "title": "Long Beach Bicycle Accident Attorney",
+              "description": "Injured in a bicycle accident? Call El Dabe Ritter Trial Lawyers in Long Beach at (213) 985-1120 for expert legal help.",
+              "url": "https://www.erlawyers.com/long-beach-bicycle-accident-attorney/",
+              "breadcrumb": "https://www.erlawyers.com › long-beach-bicycle-accide..."
+            },
+            {
+              "type": "organic",
+              "rank_group": 4,
+              "rank_absolute": 7,
+              "page": 1,
+              "domain": "gaylordnantais.com",
+              "title": "Bicycle Accident Lawyer Long Beach",
+              "description": "Our expert Bicycle Accident Lawyer Long Beach has successfully represented numerous injured bicyclists, recovering tens of millions of dollars in compensation ... Read more",
+              "url": "https://gaylordnantais.com/practice-area/bicycle-accident/",
+              "breadcrumb": "https://gaylordnantais.com › Practice Area"
+            },
+            {
+              "type": "organic",
+              "rank_group": 5,
+              "rank_absolute": 8,
+              "page": 1,
+              "domain": "www.shirianpc.com",
+              "title": "Long Beach Bicycle Accident Lawyer | Bike Crash Attorney",
+              "description": "Dec 7, 2025 — A Long Beach bicycle accident lawyer from Mark David Shirian, P.C. could explain your options for recovering financial compensation. Our ... Read more",
+              "url": "https://www.shirianpc.com/long-beach-injury/bicycle-accident-lawyer/",
+              "breadcrumb": "https://www.shirianpc.com › long-beach-injury › bicycle..."
+            },
+            {
+              "type": "organic",
+              "rank_group": 6,
+              "rank_absolute": 9,
+              "page": 1,
+              "domain": "bencrump.com",
+              "title": "Long Beach Bicycle Accident Lawyers",
+              "description": "If a bicycle accident injured you in Long Beach, Ben Crump Law, PLLC, may be able to file a personal injury lawsuit on your behalf.",
+              "url": "https://bencrump.com/areas-we-serve/long-beach-ca/bicycle-accident-lawyer/",
+              "breadcrumb": "https://bencrump.com › areas-we-serve › bicycle-accide..."
+            },
+            {
+              "type": "organic",
+              "rank_group": 7,
+              "rank_absolute": 10,
+              "page": 1,
+              "domain": "www.rmdlaw.com",
+              "title": "California Bicycle Accident Attorney | Free Consultation",
+              "description": "Hurt in a bike crash? Our bicycle accident attorney in California can help you claim fair compensation. Reach us 24/7 at 949-776-2545 for a free ...",
+              "url": "https://www.rmdlaw.com/california-bicycle-accident-lawyers/",
+              "breadcrumb": "https://www.rmdlaw.com › california-bicycle-accident-l..."
+            },
+            {
+              "type": "organic",
+              "rank_group": 8,
+              "rank_absolute": 11,
+              "page": 1,
+              "domain": "www.mkplawgroup.com",
+              "title": "Riverside Bicycle Accident Lawyer",
+              "description": "We have personal injury attorneys highly experienced in handling bicycle injury accidents and have obtained large settlements on behalf of our clients. Read more",
+              "url": "https://www.mkplawgroup.com/our-locations/riverside/riverside-bicycle-accident-lawyer/",
+              "breadcrumb": "https://www.mkplawgroup.com › ... › Riverside"
+            },
+            {
+              "type": "organic",
+              "rank_group": 9,
+              "rank_absolute": 12,
+              "page": 1,
+              "domain": "www.omegalaw.com",
+              "title": "Bicycle Accident Lawyer in Long Beach | Free Consult",
+              "description": "A Long Beach bicycle accident lawyer can investigate your accident and file a strong claim for compensation on your behalf.",
+              "url": "https://www.omegalaw.com/long-beach/bicycle-accident-lawyer/",
+              "breadcrumb": "https://www.omegalaw.com › long-beach › bicycle-acci..."
+            },
+            {
+              "type": "organic",
+              "rank_group": 10,
+              "rank_absolute": 13,
+              "page": 1,
+              "domain": "www.michaelwaks.com",
+              "title": "Long Beach Bicycle Accident Lawyer | Bike Injury Attorney",
+              "description": "Michael D. Waks is a bicycle accident lawyer in Long Beach who has many years of experience helping injured cyclists fight for the compensation they need. Read more",
+              "url": "https://www.michaelwaks.com/long-beach-bicycle-accident-lawyer/",
+              "breadcrumb": "https://www.michaelwaks.com › long-beach-bicycle-acci..."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

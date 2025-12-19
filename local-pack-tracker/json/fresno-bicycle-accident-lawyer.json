@@ -1,0 +1,197 @@
+{
+  "version": "0.1.20251208",
+  "status_code": 20000,
+  "status_message": "Ok.",
+  "time": "4.9141 sec.",
+  "cost": 0.002,
+  "tasks_count": 1,
+  "tasks_error": 0,
+  "tasks": [
+    {
+      "id": "12192009-7610-0121-0000-8c43227c74f9",
+      "status_code": 20000,
+      "status_message": "Ok.",
+      "time": "4.6901 sec.",
+      "cost": 0.002,
+      "result_count": 1,
+      "path": [
+        "v3",
+        "serp",
+        "google",
+        "organic",
+        "live",
+        "regular"
+      ],
+      "data": {
+        "api": "serp",
+        "function": "live",
+        "se": "google",
+        "se_type": "organic",
+        "keyword": "Fresno bicycle accident lawyer",
+        "language_code": "en",
+        "location_code": 1014032,
+        "device": "desktop",
+        "depth": 10,
+        "os": "windows"
+      },
+      "result": [
+        {
+          "keyword": "Fresno bicycle accident lawyer",
+          "type": "organic",
+          "se_domain": "google.com",
+          "location_code": 1014032,
+          "language_code": "en",
+          "check_url": "https://www.google.com/search?q=Fresno%20bicycle%20accident%20lawyer&hl=en&gl=US&ie=UTF-8&uule=w+CAIQIFISCY25mQ22iY-AEW4KdszworWi",
+          "datetime": "2025-12-19 18:09:11 +00:00",
+          "spell": null,
+          "refinement_chips": {
+            "type": "refinement_chips",
+            "xpath": "/html[1]/body[1]/div[3]/div[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]",
+            "items": [
+              {
+                "type": "refinement_chips_element",
+                "title": "Online appointments",
+                "url": "https://www.google.com/search?sca_esv=9fc1c8ab75c29480&hl=en&gl=US&q=online+appointments+Fresno+bicycle+accident+lawyer&uds=AOm0WdE2fekQnsyfYEw8JPYozOKzv_OeGAc-w6ZjtagoG1Jo6Dtc7j61QGjttTeIIlcxuLXtTcU67Z1EmF-TK2N_MSTHk0NQaRAfKiQTa8Q7x8RCHGjeFfiD6300lR68JlwcRCQdhbpRtxXHIsmDDC228LhclDMtV3MoPiZgxHy4nuBmI_X7se-FbmoaKC8g5kw1SiutPKagMwzhDuQG1aV-f0arWOCSl8ZCW34AmBMsjlTVgYVFAdlLOuYXdtgkHR3LKb9yw4KO21K_-ANji5XTynK5FJbJUw&sa=X&ved=2ahUKEwiJu_LKn8qRAxW0WEEAHRWUEOwQxKsJKAB6BAgOEAE&ictx=0",
+                "domain": "www.google.com",
+                "options": null
+              },
+              {
+                "type": "refinement_chips_element",
+                "title": "Open now",
+                "url": "https://www.google.com/search?sca_esv=9fc1c8ab75c29480&hl=en&gl=US&q=Fresno+bicycle+accident+lawyer+open+now&uds=AOm0WdE2fekQnsyfYEw8JPYozOKzFElzkQt32QNvGSBktGjlPRlSP2UX-gKW6VRcLG86W_7DGMHjtRR6S8ewiX1fGr305pQ2ylUv2ZbdJGR4g2gb3-6zapIaN04VjIH_hFq-k4vUF3G0unW-YBXMIfX1gH6kkb56y3wdMYgDNrOLFnaRbhPowlo2SC8gD-_Q4CwKgCE_qPXbAIGHMLvyO3NJbsXZ0xbcZQ&sa=X&ved=2ahUKEwiJu_LKn8qRAxW0WEEAHRWUEOwQxKsJKAF6BAgVEAE&ictx=0",
+                "domain": "www.google.com",
+                "options": null
+              },
+              {
+                "type": "refinement_chips_element",
+                "title": "Top rated",
+                "url": "https://www.google.com/search?sca_esv=9fc1c8ab75c29480&hl=en&gl=US&q=top+rated+Fresno+bicycle+accident+lawyer&uds=AOm0WdE2fekQnsyfYEw8JPYozOKzAoZpz-DdnASmYUl0beT2TAoZ_mDvhpI34601rx_r4zVK_ILJSfeqnPLsZGr9DlXs6P1iCwZjTouFnABiUeteGWqkt88V9A3UY9Br3d8Ijh5LOhL3MfF8kHcaMeyh3Mj7J31z4DZXbAufSFeZw1kjzdw1ihkOVCAVznoLZhEe2-rtCL-15uXb94hwO3CTe8ISIeMmAA&sa=X&ved=2ahUKEwiJu_LKn8qRAxW0WEEAHRWUEOwQxKsJKAJ6BAgUEAE&ictx=0",
+                "domain": "www.google.com",
+                "options": null
+              }
+            ]
+          },
+          "item_types": [
+            "organic",
+            "local_pack"
+          ],
+          "se_results_count": 278000,
+          "pages_count": 1,
+          "items_count": 10,
+          "items": [
+            {
+              "type": "organic",
+              "rank_group": 1,
+              "rank_absolute": 1,
+              "page": 1,
+              "domain": "www.freedmanlaw.com",
+              "title": "Fresno Bicycle Accident Attorney",
+              "description": "If you've been hurt in a crash, call the Fresno bicycle accident lawyers at Freedman Law to schedule a consultation. (559) 447-9000.",
+              "url": "https://www.freedmanlaw.com/practice-areas/bicycle-accidents/",
+              "breadcrumb": "https://www.freedmanlaw.com › practice-areas › bicycl..."
+            },
+            {
+              "type": "organic",
+              "rank_group": 2,
+              "rank_absolute": 2,
+              "page": 1,
+              "domain": "fresnocycling.com",
+              "title": "Fresno Cycling Club - Bicycle Accident Attorneys",
+              "description": "Bicycle Accident Attorneys: Michele Belanger-Mcnair, 1551 East Shaw Avenue Fresno, CA 93710, (559)230-1551, mbmlaw@comcast.net Read more",
+              "url": "https://fresnocycling.com/Bicycle-Accident-Attorneys",
+              "breadcrumb": "https://fresnocycling.com › Bicycle-Accident-Attorneys"
+            },
+            {
+              "type": "organic",
+              "rank_group": 3,
+              "rank_absolute": 3,
+              "page": 1,
+              "domain": "bencrump.com",
+              "title": "Fresno Bicycle Accident Lawyers",
+              "description": "A Fresno bicycle accident lawyer with Ben Crump Law, PLLC, For a free case evaluation, call us now at (800) 761-5225. Complete a Free Case Evaluation form",
+              "url": "https://bencrump.com/areas-we-serve/fresno-ca/bicycle-accident-lawyer/",
+              "breadcrumb": "https://bencrump.com › areas-we-serve › fresno-ca › bi..."
+            },
+            {
+              "type": "organic",
+              "rank_group": 4,
+              "rank_absolute": 7,
+              "page": 1,
+              "domain": "www.kleinlaw.com",
+              "title": "Fresno Bicycle Accident Attorney",
+              "description": "Contact our Fresno bicycle accident lawyer by calling (661) 485-2100 today! bike repair or replacement, and pain and suffering,",
+              "url": "https://www.kleinlaw.com/fresno/personal-injury/bicycle-accidents/",
+              "breadcrumb": "https://www.kleinlaw.com › fresno › personal-injury"
+            },
+            {
+              "type": "organic",
+              "rank_group": 5,
+              "rank_absolute": 8,
+              "page": 1,
+              "domain": "autoinjuryfresno.com",
+              "title": "Fresno Bicycle Accident Attorney | Free No Obligation ...",
+              "description": "Tim Mazzela, helps injured cyclists recover compensation for medical bills, lost income, and more. Call (559) 297-1118 for a free consultation. ela offers free ...",
+              "url": "https://autoinjuryfresno.com/fresno-bicycle-accident-lawyer/",
+              "breadcrumb": "https://autoinjuryfresno.com › fresno-bicycle-accident-l..."
+            },
+            {
+              "type": "organic",
+              "rank_group": 6,
+              "rank_absolute": 9,
+              "page": 1,
+              "domain": "maisonlaw.com",
+              "title": "Fresno Bicycle Accident Lawyer",
+              "description": "Maison Law is an advocate for safe bicycle rides for all Fresno bicyclists and we represent riders when they are injured by the carelessness of local drivers. Read more",
+              "url": "https://maisonlaw.com/fresno/bicycle-accidents/",
+              "breadcrumb": "https://maisonlaw.com › fresno › bicycle-accidents"
+            },
+            {
+              "type": "organic",
+              "rank_group": 7,
+              "rank_absolute": 10,
+              "page": 1,
+              "domain": "grossmanwins.com",
+              "title": "Bicycle Accidents - Grossman Wins",
+              "description": "A bicycle accident lawyer in Fresno can help you recover damages. Free In-Person Consultation. Contact us today for a free consultation with an experienced  ...",
+              "url": "https://grossmanwins.com/practice-areas/bicycle-accidents/",
+              "breadcrumb": "https://grossmanwins.com › practice-areas"
+            },
+            {
+              "type": "organic",
+              "rank_group": 8,
+              "rank_absolute": 11,
+              "page": 1,
+              "domain": "www.fhvlaw.com",
+              "title": "Fresno Bicycle Accident Lawyer",
+              "description": "Call Fowler | Helsel | Vogt today at (559) 900-1280 or contact us online to schedule a FREE consultation with our bicycle accident attorney in Fresno! Read more",
+              "url": "https://www.fhvlaw.com/personal-injury/bicycle-accidents/",
+              "breadcrumb": "https://www.fhvlaw.com › personal-injury › bicycle-acci..."
+            },
+            {
+              "type": "organic",
+              "rank_group": 9,
+              "rank_absolute": 12,
+              "page": 1,
+              "domain": "www.tpslawfirm.com",
+              "title": "Fresno Bicycle Accident Lawyer | Bike Injury ...",
+              "description": "Dec 1, 2025 — If you were injured in a bicycle accident, our lawyers will work relentlessly to obtain the financial compensation you deserve and to make ...",
+              "url": "https://www.tpslawfirm.com/personal-injury/bicycle-accident/",
+              "breadcrumb": "https://www.tpslawfirm.com › Personal Injury"
+            },
+            {
+              "type": "organic",
+              "rank_group": 10,
+              "rank_absolute": 13,
+              "page": 1,
+              "domain": "www.setarehfirm.com",
+              "title": "Fresno Bicycle Accident Lawyer",
+              "description": "If you or a loved one has been injured in a bike crash, don't hesitate to reach out to us for a free consultation. Contact Setareh Law today at 310-658-1826 or ... Read more",
+              "url": "https://www.setarehfirm.com/fresno/bicycle-accident-lawyer/",
+              "breadcrumb": "https://www.setarehfirm.com › fresno › bicycle-acciden..."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,197 @@
+{
+  "version": "0.1.20251208",
+  "status_code": 20000,
+  "status_message": "Ok.",
+  "time": "6.3156 sec.",
+  "cost": 0.002,
+  "tasks_count": 1,
+  "tasks_error": 0,
+  "tasks": [
+    {
+      "id": "12192009-7610-0121-0000-6fc719057693",
+      "status_code": 20000,
+      "status_message": "Ok.",
+      "time": "6.1261 sec.",
+      "cost": 0.002,
+      "result_count": 1,
+      "path": [
+        "v3",
+        "serp",
+        "google",
+        "organic",
+        "live",
+        "regular"
+      ],
+      "data": {
+        "api": "serp",
+        "function": "live",
+        "se": "google",
+        "se_type": "organic",
+        "keyword": "Sacramento bicycle accident lawyer",
+        "language_code": "en",
+        "location_code": 1014214,
+        "device": "desktop",
+        "depth": 10,
+        "os": "windows"
+      },
+      "result": [
+        {
+          "keyword": "Sacramento bicycle accident lawyer",
+          "type": "organic",
+          "se_domain": "google.com",
+          "location_code": 1014214,
+          "language_code": "en",
+          "check_url": "https://www.google.com/search?q=Sacramento%20bicycle%20accident%20lawyer&hl=en&gl=US&ie=UTF-8&uule=w+CAIQIFISCfO4_eJ9U8OAEY3Ch4x4xmco",
+          "datetime": "2025-12-19 18:09:18 +00:00",
+          "spell": null,
+          "refinement_chips": {
+            "type": "refinement_chips",
+            "xpath": "/html[1]/body[1]/div[3]/div[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]",
+            "items": [
+              {
+                "type": "refinement_chips_element",
+                "title": "Online appointments",
+                "url": "https://www.google.com/search?sca_esv=9fc1c8ab75c29480&hl=en&gl=US&q=online+appointments+Sacramento+bicycle+accident+lawyer&uds=AOm0WdE2fekQnsyfYEw8JPYozOKzkxMtKvnKNZX36b_KUhJoV1rd2YTauz38pUpHKjetaInSJTc6IdpceOjK8FS8ULHcjlBg4qLUTHEacN4hWcLXxaFp9epHmuAawfDo4B70zOS1bdsJan8rSyebPdRoLm1VZ3wKV3YK_SQXgc2ohZqmCkjKXVd_WpD6pfAhC4sTZthZO0B3fZKF90sioMTb9bwv6mYAfXdtUD-tveKe6AwjgTInhk0Th8NB_04jGQBPGyLbs9f2ChvE7h-l7kFyDFobO8t9nQ&sa=X&ved=2ahUKEwj8pLXOn8qRAxUvkyYFHX1cJXQQxKsJKAB6BAgSEAE&ictx=0",
+                "domain": "www.google.com",
+                "options": null
+              },
+              {
+                "type": "refinement_chips_element",
+                "title": "Open now",
+                "url": "https://www.google.com/search?sca_esv=9fc1c8ab75c29480&hl=en&gl=US&q=Sacramento+bicycle+accident+lawyer+open+now&uds=AOm0WdE2fekQnsyfYEw8JPYozOKzfCngwChX9O92lx5pStrMQFCsZ_IQPagBolhvepuW1K6rQFOUQhaGFh2uW5wW2ksCcs1ZFrzzNN_73U-UyRPAF-mG5Lmhb9kgHlsp_bVLPcTVmnwSi_h9Fgr8HffXiQAL0x_6woBDDOqaGkf4NIGULrUq7pQX_fkQlq3RRMzWSK1FkKHO-lj8GBFY86TWOKXxLiLUqA&sa=X&ved=2ahUKEwj8pLXOn8qRAxUvkyYFHX1cJXQQxKsJKAF6BAgTEAE&ictx=0",
+                "domain": "www.google.com",
+                "options": null
+              },
+              {
+                "type": "refinement_chips_element",
+                "title": "Top rated",
+                "url": "https://www.google.com/search?sca_esv=9fc1c8ab75c29480&hl=en&gl=US&q=top+rated+Sacramento+bicycle+accident+lawyer&uds=AOm0WdE2fekQnsyfYEw8JPYozOKzYuHtdbqs4ViyzFezsFYacyd4HdYMijz0FAeUTqstY-pwpKU8-WxuLEl4ozPPBc1SZ7EL4gR89GfGFhxbkInxWc8G-uvo5WoYt_WM8gFpEuR-QotWcWw7wkg4TGtKZ8G4t9ivq6LT7fIKWV4kRFbQoWHcCxKdy-FakpEGeMRpuHTg79HjVmS08d54Phccb2ejW2b1zw7rvNmsMgtRNdp0N-hWovY&sa=X&ved=2ahUKEwj8pLXOn8qRAxUvkyYFHX1cJXQQxKsJKAJ6BAgVEAE&ictx=0",
+                "domain": "www.google.com",
+                "options": null
+              }
+            ]
+          },
+          "item_types": [
+            "organic",
+            "local_pack"
+          ],
+          "se_results_count": 355000,
+          "pages_count": 1,
+          "items_count": 10,
+          "items": [
+            {
+              "type": "organic",
+              "rank_group": 1,
+              "rank_absolute": 1,
+              "page": 1,
+              "domain": "www.injury-attorneys.com",
+              "title": "Sacramento Bicycle Accident Lawyer | Demas Law Group",
+              "description": "Injured in a Sacramento bicycle accident? Our bike accident lawyers fight for maximum compensation with proven results. Get a free case review today.",
+              "url": "https://www.injury-attorneys.com/sacramento-bike-accident-lawyers/",
+              "breadcrumb": "https://www.injury-attorneys.com › sacramento-bike-ac..."
+            },
+            {
+              "type": "organic",
+              "rank_group": 2,
+              "rank_absolute": 2,
+              "page": 1,
+              "domain": "www.michaelloewen.com",
+              "title": "Sacramento Bicycle Accident Lawyer | Get Help Now",
+              "description": "Injured in a bicycle accident? Contact The Law Office of Michael R. Loewen for legal help in Sacramento. Get the compensation you deserve!",
+              "url": "https://www.michaelloewen.com/personal-injury/bicycle-accidents/",
+              "breadcrumb": "https://www.michaelloewen.com › personal-injury › bic..."
+            },
+            {
+              "type": "organic",
+              "rank_group": 3,
+              "rank_absolute": 6,
+              "page": 1,
+              "domain": "www.millerinjury.com",
+              "title": "Sacramento Bicycle Accident Lawyer",
+              "description": "If you have been injured in a bicycle crash, from “road rash” to accidents resulting in catastrophic injury, our Sacramento bicycle accident attorneys can help. Read more",
+              "url": "https://www.millerinjury.com/bicycle-accidents/",
+              "breadcrumb": "https://www.millerinjury.com › bicycle-accidents"
+            },
+            {
+              "type": "organic",
+              "rank_group": 4,
+              "rank_absolute": 7,
+              "page": 1,
+              "domain": "www.singletonschreiber.com",
+              "title": "Sacramento Bicycle Accident Lawyer",
+              "description": "If you've been hurt in a bike accident because someone else was negligent, the Sacramento bicycle accident lawyers at Singleton Schreiber can help you hold ...",
+              "url": "https://www.singletonschreiber.com/sacramento-bicycle-accident-lawyer",
+              "breadcrumb": "https://www.singletonschreiber.com › sacramento-bicyc..."
+            },
+            {
+              "type": "organic",
+              "rank_group": 5,
+              "rank_absolute": 8,
+              "page": 1,
+              "domain": "bencrump.com",
+              "title": "Sacramento Bicycle Accident Lawyers",
+              "description": "When you're ready, we're here to help. Get your free case evaluation now! Call us at 800-761-5225 or email us with the online form below... Read more",
+              "url": "https://bencrump.com/areas-we-serve/sacramento-ca/bicycle-accident-lawyer/",
+              "breadcrumb": "https://bencrump.com › areas-we-serve › sacramento-ca"
+            },
+            {
+              "type": "organic",
+              "rank_group": 6,
+              "rank_absolute": 9,
+              "page": 1,
+              "domain": "autoaccident.com",
+              "title": "Sacramento Bicycle Accident Lawyer",
+              "description": "A Sacramento bicycle accident attorney fromAutoAccident.comis here to offer free, friendly advice. Call (916) 921-6400 to discuss your cycling crash case.",
+              "url": "https://autoaccident.com/bicycle-accidents/",
+              "breadcrumb": "https://autoaccident.com › bicycle-accidents"
+            },
+            {
+              "type": "organic",
+              "rank_group": 7,
+              "rank_absolute": 10,
+              "page": 1,
+              "domain": "www.smolichlaw.com",
+              "title": "Sacramento Bicycle & Pedestrian Accidents Attorneys",
+              "description": "Our Sacramento bicycle and pedestrian accident attorneys at Smolich and Smolich can fight for the compensation you deserve. Schedule a consultation today!",
+              "url": "https://www.smolichlaw.com/personal-injury/bicycle-and-pedestrian-accidents/",
+              "breadcrumb": "https://www.smolichlaw.com › personal-injury › bicycl..."
+            },
+            {
+              "type": "organic",
+              "rank_group": 8,
+              "rank_absolute": 11,
+              "page": 1,
+              "domain": "www.mastagni.com",
+              "title": "Sacramento Attorneys Advise on Bicycle Accidents ...",
+              "description": "Mastagni Holstedt, APC can help you recover compensation when you've been injured in a bicycle accident in California. Contact us online or call 877-212-6907 ... Read more",
+              "url": "https://www.mastagni.com/practice-areas/bicycle-accidents/",
+              "breadcrumb": "https://www.mastagni.com › practice-areas › bicycle-acci..."
+            },
+            {
+              "type": "organic",
+              "rank_group": 9,
+              "rank_absolute": 12,
+              "page": 1,
+              "domain": "www.bikelegalfirm.com",
+              "title": "sacramento bicycle accident attorney - Bike Legal",
+              "description": "Injured in a Sacramento bike crash? Trust Bike Legal's attorneys, cyclists representing cyclists, to win maximum compensation. FREE consult: (877) 245-3534.",
+              "url": "https://www.bikelegalfirm.com/sacramento",
+              "breadcrumb": "https://www.bikelegalfirm.com › sacramento"
+            },
+            {
+              "type": "organic",
+              "rank_group": 10,
+              "rank_absolute": 13,
+              "page": 1,
+              "domain": "minerandkellylaw.com",
+              "title": "Sacramento Bicycle Accident Lawyer | Miner And Kelly Law",
+              "description": "Our Sacramento bicycle accident lawyers are here to fight for the compensation you deserve while you focus on your recovery.",
+              "url": "https://minerandkellylaw.com/bicycle-accident-lawyer/",
+              "breadcrumb": "https://minerandkellylaw.com › bicycle-accident-lawyer"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

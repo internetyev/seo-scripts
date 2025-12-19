@@ -35,7 +35,7 @@ try:
     from config import (
         DATAFORSEO_USERNAME,
         DATAFORSEO_PASSWORD,
-        SERP_API_URL,
+        SERP_API_URL_ADVANCED,
     )
 except ImportError as e:
     print(f"Error importing fetch_serp_raw from fetch-serp.py: {e}", file=sys.stderr)
@@ -43,9 +43,6 @@ except ImportError as e:
 except Exception as e:
     print(f"Error loading fetch-serp-pages module: {e}", file=sys.stderr)
     sys.exit(1)
-
-# Use advanced endpoint for location_coordinate support
-SERP_API_URL_ADVANCED = "https://api.dataforseo.com/v3/serp/google/organic/live/advanced"
 
 
 # Path to locations CSV (relative to this script)
@@ -467,8 +464,8 @@ Example CSV:
     parser.add_argument(
         "--depth",
         type=int,
-        default=100,
-        help="Depth of search results (default: 100)",
+        default=10,
+        help="Depth of search results (default: 10)",
     )
     
     args = parser.parse_args()
@@ -532,6 +529,7 @@ Example CSV:
                     depth=args.depth,
                     language_code=language,
                     location_code=location_code,
+                    use_advanced=True,  # Use advanced endpoint for local pack tracking
                 )
         except Exception as e:
             print(f"  Error fetching SERP: {e}", file=sys.stderr)
