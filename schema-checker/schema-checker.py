@@ -1,6 +1,7 @@
 import argparse
 import csv
 import json
+import os
 import sys
 from dataclasses import dataclass
 from typing import List, Optional, Set, Tuple
@@ -142,7 +143,12 @@ def load_urls_from_file(path: str) -> List[str]:
     return urls
 
 
-def write_results_to_csv(results: List[UrlSchemas], output_path: str) -> None:
+def write_results_to_csv(
+    results: List[UrlSchemas],
+    output_path: str,
+    mode: str = "w",
+    include_header: bool = True,
+) -> None:
     """Write the collected schema data to a CSV file."""
     # Collect all unique schema types across all URLs
     all_types: Set[str] = set()
@@ -152,9 +158,10 @@ def write_results_to_csv(results: List[UrlSchemas], output_path: str) -> None:
     sorted_types = sorted(all_types)
     header: List[str] = ["URL", "status_code"] + sorted_types
 
-    with open(output_path, "w", encoding="utf-8", newline="") as f:
+    with open(output_path, mode, encoding="utf-8", newline="") as f:
         writer = csv.writer(f)
-        writer.writerow(header)
+        if include_header:
+            writer.writerow(header)
         for res in results:
             row = [res.url, str(res.status_code)]
             present = res.schemas
@@ -235,7 +242,29 @@ def main(argv: Optional[List[str]] = None) -> None:
             results.append(analyze_url(url))
 
         output_path = args.output or "schema_results.csv"
-        write_results_to_csv(results, output_path)
+        mode = "w"
+        include_header = True
+        if os.path.exists(output_path):
+            # Ask user whether to overwrite, append, or cancel.
+            while True:
+                choice = input(
+                    f"Output file '{output_path}' already exists. "
+                    "Overwrite (o), Append (a), or Cancel (c)? [o/a/c]: "
+                ).strip().lower()
+                if choice in {"o", "overwrite"}:
+                    mode = "w"
+                    include_header = True
+                    break
+                if choice in {"a", "append"}:
+                    mode = "a"
+                    include_header = False
+                    break
+                if choice in {"c", "cancel"}:
+                    print("Operation cancelled.")
+                    return
+                print("Please enter 'o' to overwrite, 'a' to append, or 'c' to cancel.")
+
+        write_results_to_csv(results, output_path, mode=mode, include_header=include_header)
         print(f"Results written to {output_path}")
     else:
         # Single URL mode
@@ -244,8 +273,30 @@ def main(argv: Optional[List[str]] = None) -> None:
         header, rows = results_to_table(results)
 
         if args.output:
-            write_results_to_csv(results, args.output)
-            print(f"Results written to {args.output}")
+            output_path = args.output
+            mode = "w"
+            include_header = True
+            if os.path.exists(output_path):
+                while True:
+                    choice = input(
+                        f"Output file '{output_path}' already exists. "
+                        "Overwrite (o), Append (a), or Cancel (c)? [o/a/c]: "
+                    ).strip().lower()
+                    if choice in {"o", "overwrite"}:
+                        mode = "w"
+                        include_header = True
+                        break
+                    if choice in {"a", "append"}:
+                        mode = "a"
+                        include_header = False
+                        break
+                    if choice in {"c", "cancel"}:
+                        print("Operation cancelled.")
+                        return
+                    print("Please enter 'o' to overwrite, 'a' to append, or 'c' to cancel.")
+
+            write_results_to_csv(results, output_path, mode=mode, include_header=include_header)
+            print(f"Results written to {output_path}")
         else:
             # Print as CSV-style text to terminal
             print_table_as_csv_like(header, rows)
