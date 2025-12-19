@@ -36,8 +36,9 @@ pip install -r paa-fetch/requirements.txt
   - `DEFAULT_LOCATION_CODE` – DataForSEO `location_code` (e.g. `2840` for US)
   - `DEFAULT_LANGUAGE_CODE` – language code (e.g. `"en"`)
   - `DEFAULT_DEPTH` – fallback depth for SERP results
-- **Endpoint**
-  - `SERP_API_URL` – currently `https://api.dataforseo.com/v3/serp/google/organic/live/regular`
+- **Endpoints**
+  - `SERP_API_URL` – regular endpoint: `https://api.dataforseo.com/v3/serp/google/organic/live/regular`
+  - `SERP_API_URL_ADVANCED` – advanced endpoint: `https://api.dataforseo.com/v3/serp/google/organic/live/advanced`
 
 Make sure these values are set correctly before running the script.
 
@@ -85,6 +86,14 @@ python3 fetch-serp.py [options]
   Depth of search results; passed as `depth` to the DataForSEO request.  
   - Default: `10`  
   - Allowed range: **10–100** (validated by the script).
+
+**Endpoint:**
+
+- `--advanced`  
+  Use the **advanced endpoint** instead of the regular endpoint.  
+  - The advanced endpoint provides more detailed SERP data and supports additional features like `location_coordinate` for GPS-based searches.
+  - Default: uses regular endpoint (`/regular`)
+  - When enabled: uses advanced endpoint (`/advanced`)
 
 ---
 
@@ -137,6 +146,18 @@ python3 fetch-serp.py -f queries.txt --txt
 python3 fetch-serp.py -q "seo tools" --txt
 ```
 
+- **Single query using advanced endpoint:**
+
+```bash
+python3 fetch-serp.py -q "best running shoes" --advanced
+```
+
+- **Multiple queries with advanced endpoint, depth 50:**
+
+```bash
+python3 fetch-serp.py -f queries.txt --advanced --depth 50 --json --txt
+```
+
 ---
 
 ### Notes & tips
@@ -144,5 +165,6 @@ python3 fetch-serp.py -q "seo tools" --txt
 - Depth values above 100 are not allowed and will cause an error; DataForSEO also enforces its own limits.
 - For large query lists, consider using `--silent` to avoid huge JSON dumps in the terminal.
 - You can further customize which SERP blocks are included in the TXT output by editing the `extract_text_from_serp` function inside `fetch-serp.py`.
+- **When to use `--advanced`**: Use the advanced endpoint when you need more detailed SERP data, local pack information, or when using GPS coordinates (`location_coordinate`) for location-based searches. The regular endpoint is sufficient for basic organic search results.
 
 

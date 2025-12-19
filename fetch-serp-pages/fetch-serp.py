@@ -33,6 +33,7 @@ from config import (
     DEFAULT_LOCATION_CODE,
     DEFAULT_DEPTH,
     SERP_API_URL,
+    SERP_API_URL_ADVANCED,
 )
 
 
@@ -73,8 +74,24 @@ def fetch_serp_raw(
     depth: int,
     language_code: str,
     location_code: int,
+    use_advanced: bool = False,
 ) -> Dict[str, Any]:
-    """Call DataForSEO SERP API for a single query and return raw JSON."""
+    """
+    Call DataForSEO SERP API for a single query and return raw JSON.
+    
+    Args:
+        query: Search query string
+        depth: Depth of search results
+        language_code: Language code (e.g., "en")
+        location_code: DataForSEO location code
+        use_advanced: If True, use advanced endpoint; if False, use regular endpoint
+        
+    Returns:
+        Raw JSON response from the API
+    """
+    # Select endpoint based on use_advanced parameter
+    api_url = SERP_API_URL_ADVANCED if use_advanced else SERP_API_URL
+    
     payload = [
         {
             "keyword": query,
@@ -87,7 +104,7 @@ def fetch_serp_raw(
 
     try:
         response = requests.post(
-            SERP_API_URL,
+            api_url,
             auth=(DATAFORSEO_USERNAME, DATAFORSEO_PASSWORD),
             json=payload,
             headers={"Content-Type": "application/json"},
@@ -262,6 +279,11 @@ Notes:
         action="store_true",
         help="Do not print JSON response to stdout.",
     )
+    parser.add_argument(
+        "--advanced",
+        action="store_true",
+        help="Use advanced endpoint instead of regular endpoint.",
+    )
 
     args = parser.parse_args()
 
@@ -291,6 +313,7 @@ Notes:
                 depth=args.depth or DEFAULT_DEPTH,
                 language_code=DEFAULT_LANGUAGE_CODE,
                 location_code=DEFAULT_LOCATION_CODE,
+                use_advanced=args.advanced,
             )
         except Exception as e:
             print(f"Error fetching SERP for '{q_label}': {e}", file=sys.stderr)
