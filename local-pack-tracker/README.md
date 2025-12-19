@@ -19,15 +19,21 @@ The input CSV file should have the following columns:
 - `location_id` (optional): DataForSEO location code (if not provided, will lookup from location_name)
 - `language` (optional): Language code (default: "en")
 - `location_name` (optional): Location name for lookup (fallback: USA)
+- `lat` (optional): Latitude coordinate (replaces location_name/location_id if provided)
+- `lon` (optional): Longitude coordinate (replaces location_name/location_id if provided)
+- `radius` (optional): Radius in millimeters (default: 20000 = 20km, min: 199.9, max: 199999)
+
+**Note:** If `lat` and `lon` are provided, they take priority over `location_name`/`location_id`. The coordinates use the DataForSEO `location_coordinate` parameter in the format "latitude,longitude,radius".
 
 ### Example CSV
 
 ```csv
-keyword,location_id,language,location_name
-"pizza near me",,en,"New York"
-"coffee shop",2826,en,"London"
-"restaurant",,en,
-"dentist",,en,"Los Angeles"
+keyword,location_id,language,location_name,lat,lon,radius
+"pizza near me",,en,"New York",,
+"coffee shop",2826,en,"London",,
+"restaurant",,en,,40.7128,-74.0060,20000
+"dentist",,en,"Los Angeles",,
+"bakery",,en,,51.5074,-0.1278,15000
 ```
 
 ## Usage
@@ -61,8 +67,10 @@ The script generates:
 
 1. **CSV file** (default: `local-pack-positions.csv`) with columns:
    - `keyword`: The search keyword
-   - `location_code`: DataForSEO location code used
+   - `location_code`: DataForSEO location code used (empty if coordinates were used)
    - `location_name`: Location name (if provided)
+   - `latitude`: Latitude coordinate (if provided)
+   - `longitude`: Longitude coordinate (if provided)
    - `language`: Language code used
    - `local_3pack_position`: Position of local 3-pack (1-based) or "N/A" if not found
 
@@ -71,7 +79,15 @@ The script generates:
 
 ## Location Lookup
 
-The script automatically looks up location IDs from the `dataforseo-locations.csv` file located in the `top-stories` directory. If a location name is not found or not provided, it defaults to USA (location code: 2840).
+The script supports three methods for specifying location:
+
+1. **Coordinates (priority)**: If `lat` and `lon` are provided, the script uses GPS coordinates with the DataForSEO `location_coordinate` parameter. This takes priority over other methods.
+
+2. **Location ID**: If `location_id` is provided, it's used directly.
+
+3. **Location Name**: If `location_name` is provided, the script looks up the location ID from the `dataforseo-locations.csv` file located in the `top-stories` directory.
+
+If none of the above are provided, it defaults to USA (location code: 2840).
 
 ## Dependencies
 

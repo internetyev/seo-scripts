@@ -19,6 +19,8 @@ import sys
 from pathlib import Path
 from typing import Dict, List, Optional, Tuple, Any
 
+import requests
+
 # Import from existing fetch-serp-pages module
 sys.path.insert(0, str(Path(__file__).parent.parent / "fetch-serp-pages"))
 try:
@@ -29,12 +31,21 @@ try:
     fetch_serp_module = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(fetch_serp_module)
     fetch_serp_raw = fetch_serp_module.fetch_serp_raw
+    # Import config for API credentials and URL
+    from config import (
+        DATAFORSEO_USERNAME,
+        DATAFORSEO_PASSWORD,
+        SERP_API_URL,
+    )
 except ImportError as e:
     print(f"Error importing fetch_serp_raw from fetch-serp.py: {e}", file=sys.stderr)
     sys.exit(1)
 except Exception as e:
     print(f"Error loading fetch-serp-pages module: {e}", file=sys.stderr)
     sys.exit(1)
+
+# Use advanced endpoint for location_coordinate support
+SERP_API_URL_ADVANCED = "https://api.dataforseo.com/v3/serp/google/organic/live/advanced"
 
 
 # Path to locations CSV (relative to this script)
@@ -114,6 +125,72 @@ def lookup_location_code(location_name: Optional[str], location_id: Optional[str
     
     # Fallback to USA
     return FALLBACK_LOCATION_CODE
+
+
+def fetch_serp_with_coordinates(
+    query: str,
+    depth: int,
+    language_code: str,
+    latitude: float,
+    longitude: float,
+    radius: float = 20000.0,  # Default 20km in mm
+) -> Dict[str, Any]:
+    """
+    Call DataForSEO SERP API with location coordinates.
+    
+    Args:
+        query: Search keyword
+        depth: Depth of search results
+        language_code: Language code
+        latitude: Latitude coordinate
+        longitude: Longitude coordinate
+        radius: Radius in mm (default: 20000 = 20km)
+        
+    Returns:
+        Raw JSON response from the API
+    """
+    # Format: "latitude,longitude,radius"
+    location_coordinate = f"{latitude:.7f},{longitude:.7f},{radius:.1f}"
+    
+    payload = [
+        {
+            "keyword": query,
+            "language_code": language_code,
+            "location_coordinate": location_coordinate,
+            "device": "desktop",
+            "depth": depth,
+        }
+    ]
+
+    try:
+        response = requests.post(
+            SERP_API_URL_ADVANCED,
+            auth=(DATAFORSEO_USERNAME, DATAFORSEO_PASSWORD),
+            json=payload,
+            headers={"Content-Type": "application/json"},
+            timeout=300,
+        )
+    except requests.RequestException as e:
+        raise RuntimeError(f"Network error: {e}") from e
+
+    if response.status_code != 200:
+        raise RuntimeError(
+            f"HTTP error: status {response.status_code}, body: {response.text[:500]}"
+        )
+
+    try:
+        data = response.json()
+    except json.JSONDecodeError as e:
+        raise RuntimeError(f"Invalid JSON response: {e}") from e
+
+    # DataForSEO standard success code
+    if data.get("status_code") != 20000:
+        raise RuntimeError(
+            f"DataForSEO error: status_code={data.get('status_code')}, "
+            f"status_message={data.get('status_message')}"
+        )
+
+    return data
 
 
 def sanitize_keyword_for_filename(keyword: str) -> str:
@@ -235,11 +312,11 @@ def extract_local_pack_position(serp_data: Dict[str, Any]) -> Optional[int]:
         return None
 
 
-def read_keywords_from_csv(csv_path: Path) -> List[Dict[str, str]]:
+def read_keywords_from_csv(csv_path: Path) -> List[Dict[str, Any]]:
     """
     Read keywords from CSV file.
     
-    Expected columns: keyword, location_id (optional), language, location_name
+    Expected columns: keyword, location_id (optional), language, location_name, lat (optional), lon (optional), radius (optional)
     
     Args:
         csv_path: Path to CSV file
@@ -255,18 +332,74 @@ def read_keywords_from_csv(csv_path: Path) -> List[Dict[str, str]]:
     
     try:
         with open(csv_path, "r", encoding="utf-8") as f:
-            reader = csv.DictReader(f)
+            # Auto-detect delimiter (comma or tab)
+            first_line = f.readline()
+            f.seek(0)  # Reset to beginning
+            
+            delimiter = ","
+            if "\t" in first_line:
+                delimiter = "\t"
+            
+            reader = csv.DictReader(f, delimiter=delimiter)
             for row_num, row in enumerate(reader, start=2):  # Start at 2 (header is row 1)
                 keyword = row.get("keyword", "").strip()
                 if not keyword:
                     print(f"Warning: Row {row_num} has empty keyword, skipping", file=sys.stderr)
                     continue
                 
+                # Handle different column name variations
+                # location_id can be "location_id" or "location code"
+                location_id = row.get("location_id", "").strip() or row.get("location code", "").strip()
+                # location_name can be "location_name" or "location name"
+                location_name = row.get("location_name", "").strip() or row.get("location name", "").strip()
+                
+                # Parse latitude and longitude
+                lat_str = row.get("lat", "").strip()
+                lon_str = row.get("lon", "").strip()
+                radius_str = row.get("radius", "").strip()
+                
+                latitude = None
+                longitude = None
+                radius = 20000.0  # Default 20km in mm
+                
+                if lat_str and lon_str:
+                    try:
+                        latitude = float(lat_str)
+                        longitude = float(lon_str)
+                        # Validate latitude range
+                        if not -90 <= latitude <= 90:
+                            print(f"Warning: Row {row_num} has invalid latitude {latitude}, must be between -90 and 90", file=sys.stderr)
+                            latitude = None
+                            longitude = None
+                        # Validate longitude range
+                        elif not -180 <= longitude <= 180:
+                            print(f"Warning: Row {row_num} has invalid longitude {longitude}, must be between -180 and 180", file=sys.stderr)
+                            latitude = None
+                            longitude = None
+                    except ValueError:
+                        print(f"Warning: Row {row_num} has invalid lat/lon values, ignoring", file=sys.stderr)
+                
+                if radius_str:
+                    try:
+                        radius = float(radius_str)
+                        # Validate radius range (199.9 to 199999 mm)
+                        if radius < 199.9:
+                            print(f"Warning: Row {row_num} radius {radius} is too small, using minimum 199.9", file=sys.stderr)
+                            radius = 199.9
+                        elif radius > 199999:
+                            print(f"Warning: Row {row_num} radius {radius} is too large, using maximum 199999", file=sys.stderr)
+                            radius = 199999
+                    except ValueError:
+                        print(f"Warning: Row {row_num} has invalid radius value, using default 20000", file=sys.stderr)
+                
                 keywords.append({
                     "keyword": keyword,
-                    "location_id": row.get("location_id", "").strip(),
+                    "location_id": location_id,
                     "language": row.get("language", "").strip() or FALLBACK_LANGUAGE_CODE,
-                    "location_name": row.get("location_name", "").strip(),
+                    "location_name": location_name,
+                    "latitude": latitude,
+                    "longitude": longitude,
+                    "radius": radius,
                 })
     except Exception as e:
         print(f"Error reading CSV file: {e}", file=sys.stderr)
@@ -292,18 +425,24 @@ def main() -> None:
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""
 CSV Input Format:
-  keyword,location_id,language,location_name
+  keyword,location_id,language,location_name,lat,lon,radius
   
   - keyword: Required, the search keyword
   - location_id: Optional, DataForSEO location code (if not provided, will lookup from location_name)
   - language: Optional, language code (default: en)
   - location_name: Optional, location name for lookup (fallback: USA)
+  - lat: Optional, latitude coordinate (replaces location_name/location_id if provided)
+  - lon: Optional, longitude coordinate (replaces location_name/location_id if provided)
+  - radius: Optional, radius in mm (default: 20000 = 20km, min: 199.9, max: 199999)
+
+Note: If lat and lon are provided, they take priority over location_name/location_id.
 
 Example CSV:
-  keyword,location_id,language,location_name
-  "pizza near me",,en,"New York"
-  "coffee shop",2826,en,"London"
-  "restaurant",,en,
+  keyword,location_id,language,location_name,lat,lon,radius
+  "pizza near me",,en,"New York",,
+  "coffee shop",2826,en,"London",,
+  "restaurant",,en,,40.7128,-74.0060,20000
+  "dentist",,en,,51.5074,-0.1278,
         """,
     )
     
@@ -358,28 +497,50 @@ Example CSV:
         location_id = kw_data["location_id"]
         language = kw_data["language"] or FALLBACK_LANGUAGE_CODE
         location_name = kw_data["location_name"]
+        latitude = kw_data.get("latitude")
+        longitude = kw_data.get("longitude")
+        radius = kw_data.get("radius", 20000.0)
         
         print(f"\n[{idx}/{len(keywords_data)}] Processing: {keyword}")
         
-        # Lookup location code
-        location_code = lookup_location_code(location_name, location_id, locations_map)
-        print(f"  Location: {location_name or 'N/A'} (code: {location_code})")
-        print(f"  Language: {language}")
+        # Determine location method: coordinates take priority
+        use_coordinates = latitude is not None and longitude is not None
+        
+        if use_coordinates:
+            print(f"  Location: Coordinates ({latitude:.7f}, {longitude:.7f}, radius: {radius:.1f}mm)")
+            print(f"  Language: {language}")
+        else:
+            # Lookup location code
+            location_code = lookup_location_code(location_name, location_id, locations_map)
+            print(f"  Location: {location_name or 'N/A'} (code: {location_code})")
+            print(f"  Language: {language}")
         
         # Fetch SERP data
         try:
-            serp_data = fetch_serp_raw(
-                query=keyword,
-                depth=args.depth,
-                language_code=language,
-                location_code=location_code,
-            )
+            if use_coordinates:
+                serp_data = fetch_serp_with_coordinates(
+                    query=keyword,
+                    depth=args.depth,
+                    language_code=language,
+                    latitude=latitude,
+                    longitude=longitude,
+                    radius=radius,
+                )
+            else:
+                serp_data = fetch_serp_raw(
+                    query=keyword,
+                    depth=args.depth,
+                    language_code=language,
+                    location_code=location_code,
+                )
         except Exception as e:
             print(f"  Error fetching SERP: {e}", file=sys.stderr)
             results.append({
                 "keyword": keyword,
-                "location_code": location_code,
+                "location_code": location_code if not use_coordinates else "",
                 "location_name": location_name or "",
+                "latitude": latitude if use_coordinates else "",
+                "longitude": longitude if use_coordinates else "",
                 "language": language,
                 "local_3pack_position": "ERROR",
             })
@@ -401,8 +562,10 @@ Example CSV:
         
         results.append({
             "keyword": keyword,
-            "location_code": location_code,
+            "location_code": location_code if not use_coordinates else "",
             "location_name": location_name or "",
+            "latitude": latitude if use_coordinates else "",
+            "longitude": longitude if use_coordinates else "",
             "language": language,
             "local_3pack_position": local_pack_position if local_pack_position is not None else "N/A",
         })
@@ -410,7 +573,7 @@ Example CSV:
     # Write output CSV
     print(f"\nWriting results to {output_path}...")
     with open(output_path, "w", newline="", encoding="utf-8") as f:
-        fieldnames = ["keyword", "location_code", "location_name", "language", "local_3pack_position"]
+        fieldnames = ["keyword", "location_code", "location_name", "latitude", "longitude", "language", "local_3pack_position"]
         writer = csv.DictWriter(f, fieldnames=fieldnames)
         writer.writeheader()
         writer.writerows(results)
