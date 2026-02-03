@@ -23,6 +23,7 @@ import os
 import sys
 from pathlib import Path
 from typing import Any, Dict, List
+from urllib.parse import urlparse, parse_qs, unquote
 
 import requests
 
@@ -47,6 +48,19 @@ def sanitize_query_for_filename(query: str) -> str:
     if not sanitized:
         sanitized = "query"
     return sanitized
+
+
+def extract_query_from_url(input_string: str) -> str:
+    """If input is a Google search URL, extract the 'q' parameter."""
+    if input_string.startswith("http") and "google.com/search" in input_string:
+        try:
+            parsed = urlparse(input_string)
+            params = parse_qs(parsed.query)
+            if "q" in params:
+                return params["q"][0]
+        except Exception:
+            pass
+    return input_string
 
 
 def read_queries_from_file(file_path: str) -> List[str]:
@@ -284,6 +298,11 @@ Notes:
         action="store_true",
         help="Use advanced endpoint instead of regular endpoint.",
     )
+    parser.add_argument(
+        "--output-dir",
+        type=str,
+        help="Directory to save output files (defaults to script directory).",
+    )
 
     args = parser.parse_args()
 
@@ -305,7 +324,15 @@ Notes:
     if args.file:
         queries.extend(read_queries_from_file(args.file))
 
-    for q in queries:
+    # Output directory
+    if args.output_dir:
+        output_dir = Path(args.output_dir)
+        output_dir.mkdir(parents=True, exist_ok=True)
+    else:
+        output_dir = script_dir
+
+    for q_input in queries:
+        q = extract_query_from_url(q_input)
         q_label = q[:60] + ("..." if len(q) > 60 else "")
         try:
             data = fetch_serp_raw(
@@ -320,8 +347,8 @@ Notes:
             continue
 
         base_name = sanitize_query_for_filename(q)
-        json_path = script_dir / f"{base_name}_serp_depth{args.depth}.json"
-        txt_path = script_dir / f"{base_name}_serp_depth{args.depth}.txt"
+        json_path = output_dir / f"{base_name}_serp_depth{args.depth}.json"
+        txt_path = output_dir / f"{base_name}_serp_depth{args.depth}.txt"
 
         if save_json_flag:
             save_json(data, json_path)
