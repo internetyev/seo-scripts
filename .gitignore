@@ -19,3 +19,8 @@ schema-checker/*.csv
 /local-pack-tracker/json
 /local-pack-tracker/json
 /local-pack-tracker/json
+/local-pack-tracker/serp-json
+local-pack-tracker/debug_locations.py
+local-pack-tracker/generate_cities_csv.py
+local-pack-tracker/json/fresno-bicycle-accident-lawyer.json
+local-pack-tracker/json/fresno-bicycle-accident-lawyer.json
