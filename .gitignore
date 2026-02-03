@@ -16,3 +16,5 @@ sitemap-urls/*.csv
 schema-checker/*.txt
 schema-checker/*.csv
 
+/local-pack-tracker/json
+/local-pack-tracker/json
