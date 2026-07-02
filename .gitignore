@@ -24,3 +24,7 @@ local-pack-tracker/debug_locations.py
 local-pack-tracker/generate_cities_csv.py
 local-pack-tracker/json/fresno-bicycle-accident-lawyer.json
 local-pack-tracker/json/fresno-bicycle-accident-lawyer.json
+
+# Claude Code memory — keep internal memory/notes out of the repo
+/MEMORY.md
+/memory/
