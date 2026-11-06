@@ -1,10 +1,20 @@
 # Internetyev's SEO Python Scripts
 
-Hi!
-My name is Andriy Terentyev, I am SEO consultant focusing on online travel. 
-I am SEO Strategy Advisor at Kyiv Independent (https://kyivindependent.com). 
+Andriy Terentyev, SEO consultant: https://terentyev.net
 
-Previously I worked as SEO Lead at Kiwi.com, and COO of Hotelscan.com.
+In SEO for over 15 years in-house and as a consultant. SEO Strategy Advisor at KyivIndependent.com, former SEO Lead at Kiwi.com, and before that COO, CTO and CEO in tech startups. Niches: travel, news, SaaS and ecommerce.
+
+For the last three years I have worked solo, doing the work of a full SEO team with my proprietary SEO tools ([corgiseo.com](https://corgiseo.com)) and a set of AI agents. Write me for:
+
+- technical SEO of large sites,
+- SEO automation and QA monitoring,
+- AI-assisted content pipelines,
+- SEO competitive intelligence, and
+- custom AI agents for on-page SEO and linkbuilding, various SEO, GEO, SEM and social media tasks.
+
+Pet project: https://corgiseo.com, an SEO data layer for AI agents.
+
+LinkedIn: https://linkedin.com/in/terentyev
 
 Here is my collection of SEO scripts on python that I find useful.
 Some of these scripts are written by me, sometimes with a bit of help from AI. 
